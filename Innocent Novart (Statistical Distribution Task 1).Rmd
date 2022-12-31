@@ -1,0 +1,61 @@
+---
+title: "Statistical Distribution Task1"
+author: "Innocent T. Novart"
+date: "2022-11-11"
+output: html_document
+---
+
+# Task 1 Question:
+
+## A company is considering automating the ordering system. The estimate indicates that the investment will be economically justified if the number of orders exceeds 200 a day. The average daily number of orders in a company with the same business profile within 35 days was 225, with a standard deviation of 32. Determine 95% and 99% confidence interval in which the average number of orders will be found. What decision should the authorities of this company take?
+
+
+### Solution For 95% confidence level
+
+```{r}
+n = 35     #  since the sample size is greater than 30, then we shall use the normal distribution.
+xbar = 225
+sigma = 32
+cl = 0.95
+alpha = 1-cl
+z = qnorm(1-alpha/2)
+z
+EBM = z*(sigma/sqrt(n))
+EBM
+lower_end = xbar - EBM
+upper_end = xbar + EBM
+ci_0.95 = c(lower_end,upper_end)
+ci_0.95
+
+#  With the probability of 95%, the average number of orders will be found between 214 and 235 orders per day.
+```
+
+
+### Solution for 99% confidence level
+
+```{r}
+sigma = 32
+xbar = 225
+n = 35
+cl = 0.99
+alpha = 1-cl
+z = qnorm(1-alpha/2)
+z
+EBM = z*(sigma/sqrt(n))
+EBM
+lower_end = xbar - EBM
+upper_end = xbar + EBM
+ci_0.99 = c(lower_end,upper_end)
+ci_0.99
+
+#  With the probability of 99%, the average number of orders will be found between 211 and 239 orders per day.
+```
+
+
+## What decision should the authorities of this company take?
+
+## Answer
+
+### From the results, it has been statistically discovered that the average daily orders from a similar business profile are found to be between 214 and 235, and  between 211 and 239 orders per day at 95% and 99% confidence levels respectively. Since both probabilities have given an interval greater than 200 orders per day, the investment is economically justifiable. Therefore, the company should automate the ordering system.
+
+

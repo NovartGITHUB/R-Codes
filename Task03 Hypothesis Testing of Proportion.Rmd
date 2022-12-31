@@ -1,0 +1,68 @@
+---
+title: "Hypothesis Testing of Proportion"
+author: "Innocent Novart"
+date: "2022-11-10"
+output: html_document
+---
+
+## Question: Suppose 60% of citizens voted in last election. 85 out of 148 people in a telephone survey said that they voted in current election. At .05 significance level, can we reject the null hypothesis that the proportion of voters in the population is above 60% this year?
+
+```{r}
+# Since the % of sample proportion (85/148*100 = 57%) is less than the hypothesized % proportion (60%), then this is a lower tail test.
+
+pbar = 85/148    #sample proportion
+p0 = 0.6         #hypothesized proportion
+n = 148          #sample size
+alpha = 0.05     #significance level
+z = (pbar-p0)/sqrt(p0*(1-p0)/n)     #test statistic
+z
+z.alpha = qnorm(1-alpha)
+-z.alpha                            #critical element
+
+# From the results, the test statistic (z = -0.64) is not within the critical area. Therefore, 5% significance level, we fail to reject the null hypothesis that the proportion of voters in the population is above 60%.
+
+pval = pnorm(z)
+pval
+
+# From the result, the p-value (26%) is greater than the significance level. Therefore, we fail to reject the null hypothesis that the proportion of voters in the population is above 60%.
+```
+
+## Question: Suppose that 12% of apples harvested in an orchard last year was rotten. 30 out of 214 apples in a harvest sample this year turns out to be rotten. At .05 significance level, can we reject the null hypothesis that the proportion of rotten apples in harvest stays below 12% this year?
+
+```{r}
+# Since the % of sample proportion (30/214*100 = 14%) is greater than the hypothesized % proportion (12%), then this is an upper tail test.
+
+pbar = 30/214
+p0 = 0.12
+n = 214
+alpha = 0.05
+z = (pbar-p0)/sqrt(p0*(1-p0)/n)
+z
+z.alpha = qnorm(1-alpha)
+z.alpha
+
+# From the results, the test statistic (z = 0.91) is not within the critical area. Therefore, at 5% significnce level, we fail to reject the null hypothesis that the proportion of rotten apples in harvest stays below 12%.
+
+pval = pnorm(z, lower.tail = FALSE)
+pval
+
+# From the result, the p-value (18%) is greater than the significance level. Therefore, we fail to reject the null hypothesis that the proportion of rotten apples in harvest stays below 12%.
+```
+
+## Question: Suppose a coin toss turns up 12 heads out of 20 trials. At .05 significance level, can one reject the null hypothesis that the coin toss is fair?
+
+```{r}
+pbar = 12/20
+p0 = 0.5
+n = 20
+alpha = 0.05
+z = (pbar-p0)/sqrt(p0*(1-p0)/n)
+z
+z.half.alpha = qnorm(1-alpha/2)
+c(-z.half.alpha,z.half.alpha)
+
+# From the results, the test statistic (z = 0.89) is not within the critical area. Therefore, at 5% significnce level, we fail to reject the null hypothesis that the coin toss is fair.
+
+
+```
+

@@ -1,0 +1,55 @@
+```
+Fie Name: Innocent
+Author: Innocent T. Novart (315298)
+Date: 02/11/2022
+```
+## Task number 1
+
+```{r}
+xbar = 247 #sample mean of population
+mu0 = 250 #null hypothesized value
+
+## This is a lower tail test because the sample mean is less than the hypothesized value.
+
+sigma = 5 #standard deviation of population
+n = 16 #population sample size 
+z = (xbar-mu0)/(sigma/sqrt(n))
+z
+alpha = 0.05
+z.alpha = qnorm(1-alpha)
+-z.alpha
+## The test statistic is not witin the critical area. Hence, we fail to reject the null hypothesis that at 5% significance level the machine has misregulated and is producing less than normal weight chocolate bars.
+```
+
+## Task number 2(a)
+
+```{r}
+xbar = 9.94
+mu0 = 10
+
+## This is also a lower tail test because the sample mean is less than the hypothesized value.
+
+s = 0.24
+n = 36
+t = (xbar-mu0)/(s/sqrt(n))
+t
+alpha = 0.08
+t.alpha = qt(1-alpha, df = n-1)
+-t.alpha
+## At 8% significance level, the test statistic does not fall within the critical area. Hence, we fail to reject the complaints.
+```
+
+## Task number 2(b)
+
+```{r}
+xbar = 9.94
+mu0 = 10
+s = 0.24
+n = 36
+t = (xbar-mu0)/(s/sqrt(n))
+t
+alpha = 0.05
+t.alpha = qt(1-alpha, df = n-1)
+-t.alpha
+## At 5% significance level, the test statistic falls within the critical level. Hence we reject the complaints.
+```

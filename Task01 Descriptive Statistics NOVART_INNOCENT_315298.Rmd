@@ -1,0 +1,127 @@
+
+# Title: 'Task01: Descriptive Statistics'
+# Author: "Novart, Innocent 315298"
+# Date: "2022-10-21"
+
+## First, I must import the data file that I want to work with. Below is the code for importing the data file called "iris".
+
+## Also, I declare variables var1, var2, var3 and var4 to the first four columns of the iris data file namely sepal.length, sepal.width, petal.length, and petal.width respectively.
+```{r}
+data("iris")
+var1 <- iris$Sepal.Length
+var2 <- iris$Sepal.Width
+var3 <- iris$Petal.Length
+var4 <- iris$Petal.Width
+```
+
+## Now to display some descriptive statistics, I must install the sciplot package.
+```{r}
+install.packages("sciplot")
+library(sciplot)
+```
+
+```{r}
+install.packages("sciplot")
+library(sciplot)
+summary(var1)
+var1_range <- range(var1)
+var1_standard_deviation <- sd(var1)
+var1_standard_error <- se(var1)
+boxplot(var1, main ="Boxplot of Sepal.Length", ylab = "Value of Sepal.Length")
+
+# This R chunk code displays the descriptive statistics of var1.
+
+## Line26 calculates and displays the entire summary of the descriptive statistics of var1 which includes minimum value, maximum value, 1st quartile, median, 3rd quartile, and the mean. From the results, the minimum value is 4.3, the 1st quartile is 5.1, the median is 5.8, the mean is 5.843, the 3rd quartile is 6.4, and the maximum is 7.9.
+
+## Line27 displays the range of var1 which only shows the lowest and highest value in var1. The range is the difference between the highest and lowest value. From the results, the highest value is 7.9, the lowest value is 4.3, and the range is 3.6. Since the range is smaller than the mean, this shows that our dat has low variability and is therefore good for statistical analysis.
+
+## Line28 calculates and displays the standard deviation of var1 which shows how much the data is dispersed away from the mean. From the results, the standard deviation of var1 is 0.83. Since the standard deviation is smaller than the mean, this means that our data has high precision and is therefore good for statistical analysis. 
+
+## Line29 calculates and displays the standard error of var1 which shows the accuracy of the datasets should predictions be made from it. From the results, the standard error of var1 is 0.068 which is 1.16% of the mean. This is a very good (high) accuracy of data for statistical predictions and analysis.
+
+## Line30 uses the boxplot to graphically depict the structure of the var1 data. From the boxplot, we can see that var1 is normally distributed and there are no outliers in our data. This means that our data has less variability and thus the data is good for statistical analysis. 
+```
+
+```{r}
+install.packages("sciplot")
+library(sciplot)
+summary(var2)
+var2_range <- range(var2)
+var2_standard_deviation <- sd(var2)
+var2_standard_error <- se(var2)
+boxplot(var2, main ="Boxplot of Sepal.Width", ylab = "Value of Sepal.Width")
+
+# This R chunk code displays the descriptive statistics of var2.
+
+## Line48 calculates and displays the entire summary of the descriptive statistics of var2. From the results, the minimum value is 2, the 1st quartile is 2.8, the median is 3, the mean is 3.057, the 3rd quartile is 3.3, and the maximum is 4.4.
+
+## Line49 displays the range of var2. From the results, the highest value is 4.4, the lowest value is 2, and the range is 2.4. Since the range is smaller than the mean, this shows that our data has low variability.
+
+## Line50 calculates and displays the standard deviation of var2. From the results, the standard deviation of var2 is 0.436. Since the standard deviation is smaller than the mean, this means that our data has high precision.
+
+## Line51 calculates and displays the standard error of var2 which shows the accuracy of the datasets should predictions be made from it. From the results, the standard error of var2 is 0.03559 which is 1.16% of the mean. This is a very good (high) accuracy of data for statistical predictions and analysis.
+
+## Line52 uses the boxplot to graphically depict the structure of the var2 data. From the boxplot, we can see that var2 data has positive skewness and there are about 4 outliers in our data. This means that our data is not normally distributed and has some variability thus the datasets may not be good for statistical analysis. The outlier datasets should be removed for best statistical analysis. 
+
+```
+
+```{r}
+install.packages("sciplot")
+library(sciplot)
+summary(var3)
+var3_range <- range(var3)
+var3_standard_deviation <- sd(var3)
+var3_standard_error <- se(var3)
+boxplot(var3, main ="Boxplot of Petal.Length", ylab = "Value of Petal.Length")
+
+# This R chunk code displays the descriptive statistics of var3.
+
+## Line71 calculates and displays the entire summary of the descriptive statistics of var3. From the results, the minimum value is 1, the 1st quartile is 1.6, the median is 4.35, the mean is 3.758, the 3rd quartile is 5.1, and the maximum is 6.9.
+
+## Line72 displays the range of var3. From the results, the highest value is 4.4, the lowest value is 2, and the range is 2.4. Since the range is smaller than the mean, this shows that our data has low variability.
+
+## Line73 calculates and displays the standard deviation of var3. From the results, the standard deviation of var3 is 1.765. Since the standard deviation is smaller than the mean, this means that our data has high precision.
+
+## Line74 calculates and displays the standard error of var2 which shows the accuracy of the datasets should predictions be made from it. From the results, the standard error of var2 is 0.144 which is 3.8% of the mean. This is an allowable accuracy of data for statistical predictions and analysis.
+
+## Line75 uses the boxplot to graphically depict the structure of the var2 data. From the boxplot, we can see that var3 data has negative skewness and there are no outliers in our data.
+
+```
+
+```{r}
+install.packages("sciplot")
+library(sciplot)
+summary(var4)
+var4_range <- range(var4)
+var4_standard_deviation <- sd(var4)
+var4_standard_error <- se(var4)
+boxplot(var4, main ="Boxplot of Petal.Width", ylab = "Value of Petal.Width")
+
+# This R chunk code displays the descriptive statistics of var4.
+
+## Line94 calculates and displays the entire summary of the descriptive statistics of var4. From the results, the minimum value is 0.1, the 1st quartile is 0.3, the median is 1.3, the mean is 1.199, the 3rd quartile is 1.8, and the maximum is 2.5.
+
+## Line95 displays the range of var4. From the results, the highest value is 2.5, the lowest value is 0.1, and the range is 2.4. Since the range is smaller than the mean, this shows that our data has low variability.
+
+## Line96 calculates and displays the standard deviation of var4. From the results, the standard deviation of var4 is 0.762. Since the standard deviation is smaller than the mean, this means that our data has high precision.
+
+## Line97 calculates and displays the standard error of var4. From the results, the standard error of var4 is 0.06 which is 5% of the mean. This is an allowable accuracy of data for statistical predictions and analysis.
+
+## Line98 uses the boxplot to graphically depict the structure of the var4 data. From the boxplot, we can see that var4 data has negative skewness and there are no outliers in our data.
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
